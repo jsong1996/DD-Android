@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.dilloday.jimmy.dilloday.Adapters.PagerAdapter;
+import com.dilloday.jimmy.dilloday.HomeTab.MapsActivity;
 import com.dilloday.jimmy.dilloday.HomeTab.Tab1Activity;
 import com.dilloday.jimmy.dilloday.R;
 
@@ -38,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+
+                if (tab.getPosition() != 1) {
+                    viewPager.setCurrentItem(tab.getPosition());
+                }
+                else {
+                    Intent newActivity = new Intent(MainActivity.this, MapsActivity.class);
+                    startActivity(newActivity);
+                }
             }
 
             @Override

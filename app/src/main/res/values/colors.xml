@@ -5,4 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name ="Black">#000000</color>
     <color name ="White">#ffffff</color>
+    <color name = "TabBar">#F2F2F2</color>
+    <color name = "LyftPink">#E70B81</color>
+    <color name = "NorthwesternPurple">#4E2A84</color>
+    <color name = "EmergencyRed">#ce2029</color>
+    <color name = "MayfestBlue">#000080</color>
+    <color name = "ShuttleBlue">#ADD8E6</color>
+    <color name = "SponsorGreen">#98ff98 </color>
 </resources>

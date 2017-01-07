@@ -13,8 +13,4 @@
     tools:context=".ArtistPages.ArtistOne"
     tools:showIn="@layout/activity_artist_one">
 
-
-
-
-
 </RelativeLayout>

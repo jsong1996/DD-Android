@@ -1,78 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="New Button"
-        android:id="@+id/button"
+        android:layout_height="wrap_content"
+        android:text="Ride with Lyft"
+        android:id="@+id/lyft_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:height="48dp"/>
+        android:background="@color/LyftPink"
+        android:height="62dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:layout_marginTop = "10dp"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="New Button"
-        android:id="@+id/button2"
+        android:layout_height="wrap_content"
+        android:text="Call NUPD"
+        android:id="@+id/nupd_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/button"
-        android:height="48dp"/>
+        android:background="@color/NorthwesternPurple"
+        android:height="62dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:layout_marginTop = "5dp"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="New Button"
-        android:id="@+id/button3"
+        android:layout_height="wrap_content"
+        android:text="Call 911 (Emergency)"
+        android:id="@+id/emergency_button"
         android:layout_below="@+id/button2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:height="48dp"/>
+        android:background="@color/EmergencyRed"
+        android:height="62dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:layout_marginTop = "5dp"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="New Button"
-        android:id="@+id/button4"
+        android:layout_height="wrap_content"
+        android:text="Contact Mayfest"
+        android:id="@+id/mayfest_button"
         android:layout_below="@+id/button3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:height="48dp"/>
+        android:background="@color/MayfestBlue"
+        android:height="62dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:layout_marginTop = "5dp"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="New Button"
-        android:id="@+id/button5"
+        android:layout_height="wrap_content"
+        android:text="Shuttle Schedule"
+        android:id="@+id/shuttle_schedule"
         android:layout_below="@+id/button4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:height="48dp"/>
+        android:background="@color/ShuttleBlue"
+        android:height="62dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:layout_marginTop = "5dp"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:text="New Button"
-        android:id="@+id/button6"
-        android:height="48dp"
+        android:layout_height="wrap_content"
+        android:text="Sponsors"
+        android:id="@+id/sponsors_button"
+        android:background="@color/SponsorGreen"
         android:layout_below="@+id/button5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-</RelativeLayout>
+        android:layout_alignParentEnd="true"
+        android:height="62dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft = "10dp"
+        android:layout_marginRight = "10dp"
+        android:layout_marginTop = "5dp"/>
+
+
+
+</LinearLayout>

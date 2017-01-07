@@ -1,13 +1,18 @@
 package com.dilloday.jimmy.dilloday.ArtistTab;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.dilloday.jimmy.dilloday.R;
+
+import java.net.URI;
 
 
 /**
@@ -20,6 +25,7 @@ public class MusicFragment extends Fragment {
 
     public MusicFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -27,7 +33,48 @@ public class MusicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_music, container, false);
+        View view =  inflater.inflate(R.layout.fragment_music, container, false);
+
+        final Button youtubeButton = (Button) view.findViewById(R.id.youtube_button);
+        final Button spotifyButton = (Button) view.findViewById(R.id.spotify_button);
+        final Button itunesButton = (Button) view.findViewById(R.id.itunes_button);
+        final Button soundcloudButton = (Button) view.findViewById(R.id.soundcloud_button);
+        final Button tidalButton = (Button) view.findViewById(R.id.tidal_button);
+
+        youtubeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/user/SchoolBoyQVEVO"));
+                startActivity(browserIntent);
+            }
+        });
+
+        spotifyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                Intent spotifyIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.spotify.com/artist/5IcR3N7QB1j6KBL8eImZ8m"));
+                startActivity(spotifyIntent);
+            }
+        });
+        itunesButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                Intent spotifyIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://itunes.apple.com/us/artist/schoolboy-q/id333097675"));
+                startActivity(spotifyIntent);
+            }
+        });
+        soundcloudButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                Intent spotifyIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://soundcloud.com/schoolboy-q"));
+                startActivity(spotifyIntent);
+            }
+        });
+        tidalButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                Intent spotifyIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://listen.tidal.com/artist/3882537"));
+                startActivity(spotifyIntent);
+            }
+        });
+
+
+        return view;
     }
 
 }
