@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.dilloday.jimmy.dilloday.Adapters.PagerAdapter;
 import com.dilloday.jimmy.dilloday.HomeTab.MapsActivity;
@@ -39,14 +40,29 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                TextView header = (TextView) findViewById(R.id.header_text);
+                viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0){
+                    header.setText("SCHEDULE");
+                }
+                else if (tab.getPosition() == 1) {
+                    header.setText("MAP");
+                }
+                else if (tab.getPosition() == 2){
+                    header.setText("ALERTS");
+                }
+                else if (tab.getPosition() == 3){
+                    header.setText("INFO");
+                }
 
-                if (tab.getPosition() != 1) {
-                    viewPager.setCurrentItem(tab.getPosition());
-                }
-                else {
-                    Intent newActivity = new Intent(MainActivity.this, MapsActivity.class);
-                    startActivity(newActivity);
-                }
+                //Google Maps
+//                if (tab.getPosition() != 1) {
+//                    viewPager.setCurrentItem(tab.getPosition());
+//                }
+//                else {
+//                    Intent newActivity = new Intent(MainActivity.this, MapsActivity.class);
+//                    startActivity(newActivity);
+//                }
             }
 
             @Override

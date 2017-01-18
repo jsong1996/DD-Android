@@ -5,6 +5,17 @@
     android:layout_height="fill_parent"
     tools:context=".Main.MainActivity">
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="SCHEDULE"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:id="@+id/header_text"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"/>
 
     <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
@@ -28,6 +39,9 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/tab_layout"/>
+        android:layout_above="@id/tab_layout"
+        android:layout_below="@+id/header_text" />
+
+
 
 </RelativeLayout>
