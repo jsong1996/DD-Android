@@ -14,7 +14,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Dillo Day"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".Main.SplashActivity"
             android:screenOrientation="portrait"

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.dilloday.jimmy.dilloday.R;
 
@@ -35,11 +36,11 @@ public class MusicFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_music, container, false);
 
-        final Button youtubeButton = (Button) view.findViewById(R.id.youtube_button);
-        final Button spotifyButton = (Button) view.findViewById(R.id.spotify_button);
-        final Button itunesButton = (Button) view.findViewById(R.id.itunes_button);
-        final Button soundcloudButton = (Button) view.findViewById(R.id.soundcloud_button);
-        final Button tidalButton = (Button) view.findViewById(R.id.tidal_button);
+        final ImageButton youtubeButton = (ImageButton) view.findViewById(R.id.youtube_button);
+        final ImageButton spotifyButton = (ImageButton) view.findViewById(R.id.spotify_button);
+        final ImageButton itunesButton = (ImageButton) view.findViewById(R.id.itunes_button);
+        final ImageButton soundcloudButton = (ImageButton) view.findViewById(R.id.soundcloud_button);
+        final ImageButton tidalButton = (ImageButton) view.findViewById(R.id.tidal_button);
 
         youtubeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V) {
