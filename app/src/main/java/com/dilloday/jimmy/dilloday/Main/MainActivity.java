@@ -40,18 +40,22 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                int tabPos = tab.getPosition();
+
                 TextView header = (TextView) findViewById(R.id.header_text);
-                viewPager.setCurrentItem(tab.getPosition());
-                if (tab.getPosition() == 0){
+                viewPager.setCurrentItem(tabPos);
+
+
+                if (tabPos == 0){
                     header.setText("SCHEDULE");
                 }
-                else if (tab.getPosition() == 1) {
+                else if (tabPos == 1) {
                     header.setText("MAP");
                 }
-                else if (tab.getPosition() == 2){
+                else if (tabPos == 2){
                     header.setText("ALERTS");
                 }
-                else if (tab.getPosition() == 3){
+                else if (tabPos == 3){
                     header.setText("INFO");
                 }
 

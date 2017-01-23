@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "636981774945",
+    "firebase_url": "https://dillo-day-androi-1483670185603.firebaseio.com",
+    "project_id": "dillo-day-androi-1483670185603",
+    "storage_bucket": "dillo-day-androi-1483670185603.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636981774945:android:0967aa764a229281",
+        "android_client_info": {
+          "package_name": "com.dilloday.jimmy.dilloday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636981774945-b471u8nv9a1ai29pvdvgmo1bp2o7f27v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrFudMs-fmLZ4xd9Tqz5CvwUyXKFGCkmg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
