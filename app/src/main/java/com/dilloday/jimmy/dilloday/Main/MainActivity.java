@@ -1,17 +1,20 @@
 package com.dilloday.jimmy.dilloday.Main;
 
-import android.content.Intent;
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dilloday.jimmy.dilloday.Adapters.PagerAdapter;
-import com.dilloday.jimmy.dilloday.HomeTab.MapsActivity;
-import com.dilloday.jimmy.dilloday.HomeTab.Tab1Activity;
 import com.dilloday.jimmy.dilloday.R;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (tabPos == 0){
                     header.setText("SCHEDULE");
+                    String tkn = FirebaseInstanceId.getInstance().getToken();
+                    Toast.makeText(MainActivity.this, "Current token ["+tkn+"]",
+                            Toast.LENGTH_LONG).show();
                 }
                 else if (tabPos == 1) {
                     header.setText("MAP");
@@ -59,14 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     header.setText("INFO");
                 }
 
-                //Google Maps
-//                if (tab.getPosition() != 1) {
-//                    viewPager.setCurrentItem(tab.getPosition());
-//                }
-//                else {
-//                    Intent newActivity = new Intent(MainActivity.this, MapsActivity.class);
-//                    startActivity(newActivity);
-//                }
             }
 
             @Override
@@ -78,7 +76,13 @@ public class MainActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
+
+
+
+
         });
+
+
 
 
     }

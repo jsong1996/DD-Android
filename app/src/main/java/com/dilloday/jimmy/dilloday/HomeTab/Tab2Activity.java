@@ -15,8 +15,6 @@ public class Tab2Activity extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        Intent newActivity = new Intent(Tab2Activity.this.getContext(), MapsActivity.class);
-//        startActivity(newActivity);
         return inflater.inflate(R.layout.fragment_map, container, false);
 
 
