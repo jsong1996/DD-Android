@@ -22,10 +22,7 @@ public class Artist
         this.img = _img;
     }
 
-    public String getName()
-    {
-        return name;
-    }
+    public String getName() {return name;}
 
     public String getTime()
     {
