@@ -9,17 +9,18 @@ import android.widget.ImageView;
  */
 public class Artist
 {
+
     private String name;
     private String time;
     private int img;
 
     public Artist(){}
 
-    public Artist( String _name, String _time, int _img)
+    public Artist( String name, String time, int img)
     {
-        this.name = _name;
-        this.time = _time;
-        this.img = _img;
+        this.name = name;
+        this.time = time;
+        this.img = img;
     }
 
     public String getName() {return name;}
@@ -33,13 +34,13 @@ public class Artist
 
     public void setName (String Name)
     {
-        this.name = name;
+        this.name = Name;
     }
 
     public void setTime (String Time)
     {
-        this.time = time;
+        this.time = Time;
     }
 
-    public void setImg(Image Img) {this.img = img;}
+    public void setImg(int Img) {this.img = Img;}
 }

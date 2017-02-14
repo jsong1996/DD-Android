@@ -8,12 +8,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/static_map"
+        android:id="@+id/map"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background = "@drawable/lakefill_map_2016"/>
+        />
+        //android:background = "@drawable/lakefill_map_2016"
 </RelativeLayout>
