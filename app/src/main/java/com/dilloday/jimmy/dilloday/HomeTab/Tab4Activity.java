@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.dilloday.jimmy.dilloday.Main.MainActivity;
 import com.dilloday.jimmy.dilloday.R;
 
 public class Tab4Activity extends Fragment {
@@ -83,14 +85,23 @@ public class Tab4Activity extends Fragment {
         });
         mayfestButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "dilloday@gmail.com", null));
-                startActivity(intent);
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.setType("text/plain");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"dilloday@gmail.com"});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "subject");
+                emailIntent.putExtra(Intent.EXTRA_TEXT   , "Message Body");
+                try {
+                    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                    Log.i("Email Sent", "");
+                }catch (android.content.ActivityNotFoundException ex){
+                    Toast.makeText(getContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         shuttleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.northwestern.edu/transportation-parking/documents/shuttle-overview.pdf"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://northwestern.doublemap.com/map/"));
                 startActivity(browserIntent);
             }
         });
