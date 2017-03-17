@@ -9,6 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="SCHEDULE"
+        android:fontFamily="casual"
         android:layout_centerVertical="true"
         android:textColor="@color/Black"
         android:textStyle="bold"
@@ -18,16 +19,24 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:minHeight ="30dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/White"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_alignBottom="@+id/header_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:background="?attr/colorPrimary"
     android:minHeight="?attr/actionBarSize"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    android:theme="@style/Base_ToolbarStyle"
+        android:layout_below="@+id/pager"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
@@ -36,7 +45,8 @@
         android:layout_alignParentBottom="true"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        android:theme="@style/Base_ToolbarStyle"
+        android:fillViewport="false" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

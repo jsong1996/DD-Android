@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name ="Black">#000000</color>
     <color name ="White">#ffffff</color>
+    <color name ="DarkGrey">#212121</color>
     <color name = "TabBar">#F2F2F2</color>
     <color name = "LyftPink">#E70B81</color>
     <color name = "NorthwesternPurple">#4E2A84</color>
