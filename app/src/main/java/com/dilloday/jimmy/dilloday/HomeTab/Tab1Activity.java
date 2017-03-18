@@ -37,13 +37,14 @@ import java.util.ArrayList;
 
 public class Tab1Activity extends Fragment {
     private static final String TAG = "FirebaseDatabase";
-    public static Artist artist1 = new Artist("TBD", "9:00 PM", R.drawable.pink_background);
-    public static Artist artist2 = new Artist("TBD", "7:45 PM", R.drawable.pink_background);
-    public static Artist artist3 = new Artist("TBD", "6:00 PM", R.drawable.pink_background);
-    public static Artist artist4 = new Artist("TBD", "5:15 PM", R.drawable.pink_background);
-    public static Artist artist5 = new Artist("TBD", "3:30 PM", R.drawable.pink_background);
-    public static Artist artist6 = new Artist("TBD", "2:00 PM", R.drawable.pink_background);
-    public static Artist artist7 = new Artist("TBD", "1:00 PM", R.drawable.pink_background);
+    private static final String pinkBackgroundURL = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQbEICyOfhxQfSU9RfxTqJHbIWB0qChykTNZwl4FYtPF1JPiIxbiA";
+    public static Artist artist1 = new Artist("TBD", "9:00 PM", pinkBackgroundURL);
+    public static Artist artist2 = new Artist("TBD", "7:45 PM", pinkBackgroundURL);
+    public static Artist artist3 = new Artist("TBD", "6:00 PM", pinkBackgroundURL);
+    public static Artist artist4 = new Artist("TBD", "5:15 PM", pinkBackgroundURL);
+    public static Artist artist5 = new Artist("TBD", "3:30 PM", pinkBackgroundURL);
+    public static Artist artist6 = new Artist("TBD", "2:00 PM", pinkBackgroundURL);
+    public static Artist artist7 = new Artist("TBD", "1:00 PM", pinkBackgroundURL);
 
 
     @Override
@@ -66,11 +67,7 @@ public class Tab1Activity extends Fragment {
                 if (newPost.Name.toString().equals("SCHOOLBOY Q")){
                     artist1.setName(newPost.Name);
                     artist1.setTime(newPost.Time);;
-                    //Drawable schoolboyq_img = LoadImageFromWebOperations("https://fanart.tv/api/download.php?type=download&image=125631&section=2");
-                    //Bitmap image;
-
-                    //System.out.println(schoolboyq_img);
-                    artist1.setImg(R.drawable.schoolboyq_background);
+                    artist1.setImgURL(newPost.imgURL);
                     //artist1.setImgDrawable(schoolboyq_img);
 
                 }

@@ -13,16 +13,17 @@ public class Artist
 
     private String name;
     private String time;
+    private String imgURL;
     private int img;
     private Drawable drawableImg;
 
     public Artist(){}
 
-    public Artist( String name, String time, int img)
+    public Artist( String name, String time, String imgURL)
     {
         this.name = name;
         this.time = time;
-        this.img = img;
+        this.imgURL = imgURL;
     }
 
     public String getName() {return name;}
@@ -31,6 +32,8 @@ public class Artist
     {
         return time;
     }
+
+    public String getImgURL() {return imgURL;}
 
     public int getImg() {return img;}
 
@@ -49,4 +52,6 @@ public class Artist
     public void setImg(int Img) {this.img = Img;}
 
     public void setImgDrawable(Drawable drawableImg) {this.drawableImg = drawableImg;}
+
+    public void setImgURL(String imgURL) {this.imgURL = imgURL;}
 }

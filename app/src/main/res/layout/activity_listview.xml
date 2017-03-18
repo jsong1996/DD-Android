@@ -18,7 +18,7 @@
         android:id="@+id/txt_name"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:paddingTop="80dp"
+        android:paddingTop="64dp"
         android:textSize="32sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"

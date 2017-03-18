@@ -70,9 +70,10 @@ public class ArtistAdapter extends BaseAdapter {
         holder.txtStrikes.setText(artist.getTime());
         //holder.backgroundImg.setBackgroundResource(artist.getImg());
 
+        System.out.println(artist.getImgURL());
         ImageView imgHolder = (ImageView) convertView.findViewById(R.id.imgHolder);
         Picasso.with(context) //Context
-                .load("http://www.showcasepr.com/thumbs/artist_image_header/55f6f0a84730f_schoolboy%20banner.940x230.jpg") //URL/FILE
+                .load(artist.getImgURL()) //URL/FILE
                 .into(imgHolder);//an ImageView Object to show the loaded image;
 
         //holder.backgroundImg.setBackground(artist.getDrawableImg());
