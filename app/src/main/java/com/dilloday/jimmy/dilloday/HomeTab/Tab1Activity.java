@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -45,6 +47,7 @@ public class Tab1Activity extends Fragment {
     public static Artist artist5 = new Artist("TBD", "3:30 PM", pinkBackgroundURL);
     public static Artist artist6 = new Artist("TBD", "2:00 PM", pinkBackgroundURL);
     public static Artist artist7 = new Artist("TBD", "1:00 PM", pinkBackgroundURL);
+    public static MediaPlayer player = new MediaPlayer();
 
 
     @Override
@@ -142,6 +145,15 @@ public class Tab1Activity extends Fragment {
                 switch (position) {
                     //Fill with artist switch cases
                     case 0:
+//                        try {
+//
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource("https://9xcloud.net/downloads/song/320/Dope%20Dealer%20-%20ScHoolboy%20Q%20Ft%20E-40%20(320kbps).mp3");
+//                            player.prepare();
+//                            player.start();
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
                         Intent newActivity = new Intent(Tab1Activity.this.getContext(), ArtistOne.class);
                         startActivity(newActivity);
                         break;
