@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="162dp"
     android:id="@+id/background_img"
     android:height="192dp"
+
     >
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="192dp"
+        android:id="@+id/imgHolder"
+        android:scaleType="fitXY"
+    />
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/txt_name"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:paddingTop="64dip"
-        android:textSize="32dip"
+        android:paddingTop="80dp"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:height="192dp"
@@ -24,20 +32,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:paddingBottom="64dip"
+        android:layout_gravity="center"
+        android:paddingBottom="16dip"
         android:textColor="@color/White"
+        android:textAlignment="center"
 
-        />
-
-    <![CDATA[
-
-    />
-
-
-
-
-
-]]>
+        android:layout_alignParentBottom="true"
+ />
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.dilloday.jimmy.dilloday.Classes;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.widget.ImageView;
 
@@ -13,6 +14,7 @@ public class Artist
     private String name;
     private String time;
     private int img;
+    private Drawable drawableImg;
 
     public Artist(){}
 
@@ -32,6 +34,8 @@ public class Artist
 
     public int getImg() {return img;}
 
+    public Drawable getDrawableImg() {return drawableImg;}
+
     public void setName (String Name)
     {
         this.name = Name;
@@ -43,4 +47,6 @@ public class Artist
     }
 
     public void setImg(int Img) {this.img = Img;}
+
+    public void setImgDrawable(Drawable drawableImg) {this.drawableImg = drawableImg;}
 }

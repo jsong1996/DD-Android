@@ -9,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.dilloday.jimmy.dilloday.Adapters.ArtistAdapter;
 import com.dilloday.jimmy.dilloday.Classes.Artist;
 import com.dilloday.jimmy.dilloday.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -66,8 +68,17 @@ public class ArtistAdapter extends BaseAdapter {
         Artist artist = listArtists.get(position);
         holder.txtName.setText(artist.getName());
         holder.txtStrikes.setText(artist.getTime());
-        holder.backgroundImg.setBackgroundResource(artist.getImg());
-        //holder.backgroundImg.setImageResource(R.mipmap.schoolboy_background);
+        //holder.backgroundImg.setBackgroundResource(artist.getImg());
+
+        ImageView imgHolder = (ImageView) convertView.findViewById(R.id.imgHolder);
+        Picasso.with(context) //Context
+                .load("http://www.showcasepr.com/thumbs/artist_image_header/55f6f0a84730f_schoolboy%20banner.940x230.jpg") //URL/FILE
+                .into(imgHolder);//an ImageView Object to show the loaded image;
+
+        //holder.backgroundImg.setBackground(artist.getDrawableImg());
+
+
+
 
         return convertView;
     }

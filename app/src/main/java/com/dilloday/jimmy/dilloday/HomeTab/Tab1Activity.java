@@ -1,5 +1,9 @@
 package com.dilloday.jimmy.dilloday.HomeTab;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,6 +20,7 @@ import com.dilloday.jimmy.dilloday.Adapters.ArtistAdapter;
 import com.dilloday.jimmy.dilloday.ArtistPages.ArtistOne;
 import com.dilloday.jimmy.dilloday.Classes.Artist;
 import com.dilloday.jimmy.dilloday.Classes.dbArtist;
+import com.dilloday.jimmy.dilloday.Classes.Util;
 import com.dilloday.jimmy.dilloday.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,17 +29,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class Tab1Activity extends Fragment {
     private static final String TAG = "FirebaseDatabase";
-    public static Artist artist1 = new Artist();
-    public static Artist artist2 = new Artist();
-    public static Artist artist3 = new Artist();
-    public static Artist artist4 = new Artist();
-    public static Artist artist5 = new Artist();
-    public static Artist artist6 = new Artist();
-    public static Artist artist7 = new Artist();
+    public static Artist artist1 = new Artist("TBD", "9:00 PM", R.drawable.pink_background);
+    public static Artist artist2 = new Artist("TBD", "7:45 PM", R.drawable.pink_background);
+    public static Artist artist3 = new Artist("TBD", "6:00 PM", R.drawable.pink_background);
+    public static Artist artist4 = new Artist("TBD", "5:15 PM", R.drawable.pink_background);
+    public static Artist artist5 = new Artist("TBD", "3:30 PM", R.drawable.pink_background);
+    public static Artist artist6 = new Artist("TBD", "2:00 PM", R.drawable.pink_background);
+    public static Artist artist7 = new Artist("TBD", "1:00 PM", R.drawable.pink_background);
 
 
     @Override
@@ -50,41 +59,47 @@ public class Tab1Activity extends Fragment {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 dbArtist newPost = dataSnapshot.getValue(dbArtist.class);
-                System.out.println("Name: " + newPost.Name);
-                System.out.println("Time: " + newPost.Time);
-                System.out.println("Previous Post ID: " + prevChildKey);
+//                System.out.println("Name: " + newPost.Name);
+//                System.out.println("Time: " + newPost.Time);
+//                System.out.println("Previous Post ID: " + prevChildKey);
 
                 if (newPost.Name.toString().equals("SCHOOLBOY Q")){
                     artist1.setName(newPost.Name);
                     artist1.setTime(newPost.Time);;
+                    //Drawable schoolboyq_img = LoadImageFromWebOperations("https://fanart.tv/api/download.php?type=download&image=125631&section=2");
+                    //Bitmap image;
+
+                    //System.out.println(schoolboyq_img);
                     artist1.setImg(R.drawable.schoolboyq_background);
+                    //artist1.setImgDrawable(schoolboyq_img);
+
                 }
-                else if (newPost.Name.toString().equals("CASHMERE CAT")){
+                else if (newPost.Name.toString().equals("Artist2")){
                     artist2.setName(newPost.Name);
                     artist2.setTime(newPost.Time);
                     artist2.setImg(R.drawable.cashmere_background);
                 }
-                else if (newPost.Name.toString().equals("DIAL UP")) {
+                else if (newPost.Name.toString().equals("Artist3")) {
                     artist3.setName(newPost.Name);
                     artist3.setTime(newPost.Time);
                     artist3.setImg(R.drawable.dialup_background);
                 }
-                else if (newPost.Name.toString().equals("HAYDEN JAMES")) {
+                else if (newPost.Name.toString().equals("Artist4")) {
                     artist4.setName(newPost.Name);
                     artist4.setTime(newPost.Time);
                     artist4.setImg(R.drawable.hayden_background);
                 }
-                else if (newPost.Name.toString().equals("ANDERSON .PAAK")) {
+                else if (newPost.Name.toString().equals("Artist5")) {
                     artist5.setName(newPost.Name);
                     artist5.setTime(newPost.Time);
                     artist5.setImg(R.drawable.anderson_background);
                 }
-                else if (newPost.Name.toString().equals("THE MOWGLIS")) {
+                else if (newPost.Name.toString().equals("Artist6")) {
                     artist6.setName(newPost.Name);
                     artist6.setTime(newPost.Time);
                     artist6.setImg(R.drawable.mowglis_background);
                 }
-                else if (newPost.Name.toString().equals("THE SYNDICATE")) {
+                else if (newPost.Name.toString().equals("Artist7")) {
                     artist7.setName(newPost.Name);
                     artist7.setTime(newPost.Time);
                     artist7.setImg(R.drawable.syndicate_background);
@@ -109,15 +124,6 @@ public class Tab1Activity extends Fragment {
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         });
-
-        //artist1 = new Artist(artist10.getName(), artist10.getTime(), R.drawable.schoolboyq_background);
-        //artist2 = new Artist("CASHMERE CAT", "7:45 PM", R.drawable.cashmere_background);
-        //artist3 = new Artist("DIAL UP", "6:45 PM", R.drawable.dialup_background);
-//        artist4 = new Artist("HAYDEN JAMES", "5:15 PM", R.drawable.cashmere_background);
-//        artist5 = new Artist("ANDERSON .PAAK", "3:30 PM", R.drawable.anderson_background);
-//        artist6 = new Artist("THE MOWGLI'S", "2:00 PM", R.drawable.mowglis_background);
-//        artist7 = new Artist("THE SYNDICATE", "1:00 PM", R.drawable.syndicate_background);
-
         arrayArtists.add(artist1);
         arrayArtists.add(artist2);
         arrayArtists.add(artist3);
@@ -129,9 +135,6 @@ public class Tab1Activity extends Fragment {
         final ListView listview = (ListView) rootView.findViewById(R.id.test_list);
         ArtistAdapter adapter = new ArtistAdapter(this.getContext(), arrayArtists);
         listview.setAdapter(adapter);
-
-
-
 
 
         //Pull the string at the corresponding click and store into listeItem.
@@ -167,5 +170,15 @@ public class Tab1Activity extends Fragment {
         );
 
         return rootView;
+    }
+
+    public static Drawable LoadImageFromWebOperations(String url) {
+        try {
+            InputStream is = (InputStream) new URL(url).getContent();
+            Drawable d = Drawable.createFromStream(is, "src name");
+            return d;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
