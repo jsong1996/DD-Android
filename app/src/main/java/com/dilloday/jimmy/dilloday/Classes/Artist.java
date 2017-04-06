@@ -14,16 +14,18 @@ public class Artist
     private String name;
     private String time;
     private String imgURL;
+    private String audioURL;
     private int img;
     private Drawable drawableImg;
 
     public Artist(){}
 
-    public Artist( String name, String time, String imgURL)
+    public Artist( String name, String time, String imgURL, String audioURL)
     {
         this.name = name;
         this.time = time;
         this.imgURL = imgURL;
+        this.audioURL = audioURL;
     }
 
     public String getName() {return name;}
@@ -34,6 +36,8 @@ public class Artist
     }
 
     public String getImgURL() {return imgURL;}
+
+    public String getAudioURL() {return audioURL;}
 
     public int getImg() {return img;}
 
@@ -54,4 +58,6 @@ public class Artist
     public void setImgDrawable(Drawable drawableImg) {this.drawableImg = drawableImg;}
 
     public void setImgURL(String imgURL) {this.imgURL = imgURL;}
+
+    public void setAudioURL(String audioURL){this.audioURL = audioURL;}
 }
