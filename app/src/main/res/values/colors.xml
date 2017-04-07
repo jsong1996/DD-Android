@@ -8,9 +8,9 @@
     <color name ="DarkGrey">#212121</color>
     <color name = "TabBar">#F2F2F2</color>
     <color name = "LyftPink">#E70B81</color>
-    <color name = "NorthwesternPurple">#4E2A84</color>
-    <color name = "EmergencyRed">#ce2029</color>
-    <color name = "MayfestBlue">#000080</color>
-    <color name = "ShuttleBlue">#ADD8E6</color>
+    <color name = "NorthwesternPurple">#d9d1ff</color>
+    <color name = "EmergencyRed">#ffb1b1</color>
+    <color name = "MayfestBlue">#b7efff</color>
+    <color name = "ShuttleBlue">#fff3aa</color>
     <color name = "SponsorGreen">#98ff98 </color>
 </resources>

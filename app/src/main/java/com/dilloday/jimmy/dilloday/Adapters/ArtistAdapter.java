@@ -83,6 +83,9 @@ public class ArtistAdapter extends BaseAdapter {
         holder.audioURL = artist.getAudioURL();
 
         ImageView imgHolder = (ImageView) convertView.findViewById(R.id.imgHolder);
+        for (int i = 0; i < 7; i++){
+            clickedArray[pos] = false;
+        }
         if (clickedArray[position] == true){
             imgHolder.setAlpha(0.5f);
         }
@@ -93,6 +96,7 @@ public class ArtistAdapter extends BaseAdapter {
         imgHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(holder.audioURL);
                 if (clickedArray[pos] == false) {
                     clickedArray[pos] = true;
                     v.setAlpha(0.5f);
