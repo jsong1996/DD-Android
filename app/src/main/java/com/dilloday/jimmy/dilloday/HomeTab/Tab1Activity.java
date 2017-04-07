@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -49,13 +50,18 @@ public class Tab1Activity extends Fragment {
     public static Artist artist7 = new Artist("TBD", "1:00 PM", pinkBackgroundURL, "notset");
     public static MediaPlayer player = new MediaPlayer();
     public static String musicSource = new String();
+    public boolean[] clickedArray = new boolean[7];
+
+
+
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-        ArrayList<Artist> arrayArtists = new ArrayList<Artist>();
+        final ArrayList<Artist> arrayArtists = new ArrayList<Artist>();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -64,9 +70,6 @@ public class Tab1Activity extends Fragment {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 dbArtist newPost = dataSnapshot.getValue(dbArtist.class);
-//                System.out.println("Name: " + newPost.Name);
-//                System.out.println("Time: " + newPost.Time);
-//                System.out.println("Previous Post ID: " + prevChildKey);
 
                 if (newPost.ID.toString().equals("Artist1")){
                     artist1.setName(newPost.Name);
@@ -143,194 +146,200 @@ public class Tab1Activity extends Fragment {
         ArtistAdapter adapter = new ArtistAdapter(this.getContext(), arrayArtists);
         listview.setAdapter(adapter);
 
+        //        if (clickedArray[position] == true){
+//            imgHolder.setAlpha(0.5f);
+//        }
+//        else{
+//            imgHolder.setAlpha(1.0f);
+//        }
 
+//        imgHolder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (clickedArray[pos] == false) {
+//                    clickedArray[pos] = true;
+//                    v.setAlpha(0.5f);
+//                }
+//                else{
+//                    clickedArray[pos] = false;
+//                    v.setAlpha(1.0f);
+//                }
+//
+//            }
+//        });
 
-
-        //Pull the string at the corresponding click and store into listeItem.
         listview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Extract object at each lits position.
-                Object listItem = listview.getItemAtPosition(position);
+
+//
+//                if (clickedArray[position] == false) {
+//                    clickedArray[position] = true;
+//                    view.setAlpha(0.5f);
+//                }
+//                else{
+//                    clickedArray[position] = false;
+//                    view.setAlpha(1.0f);
+//                }
+
                 switch (position) {
                     //Fill with artist switch cases
-                    case 0:
-                        try {
-
-                            if (musicSource != artist1.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist1.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-//                        Intent newActivity = new Intent(Tab1Activity.this.getContext(), ArtistOne.class);
-//                        startActivity(newActivity);
-                        break;
-                    case 1:
-                        try {
-
-                            if (musicSource != artist2.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist2.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
-                    case 2:
-                        try {
-
-                            if (musicSource != artist3.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist3.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
-                    case 3:
-                        try {
-
-                            if (musicSource != artist4.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist4.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
-                    case 4:
-                        try {
-
-                            if (musicSource != artist5.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist5.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
-                    case 5:
-                        try {
-
-                            if (musicSource != artist6.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist6.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
-                    case 6:
-                        try {
-
-                            if (musicSource != artist7.getAudioURL()) {
-                                player.stop();
-                                musicSource = artist7.getAudioURL();
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
-                    case 7:
-                        try {
-
-                            if (musicSource != "http://sound41.songsbling.link/songspk/files/A%20Sky%20Full%20Of%20Stars%20-%20Coldplay%20-%20%5BSongsPk.CC%5D.mp3") {
-                                player.stop();
-                                musicSource = "http://sound41.songsbling.link/songspk/files/A%20Sky%20Full%20Of%20Stars%20-%20Coldplay%20-%20%5BSongsPk.CC%5D.mp3";
-                            }
-
-                            if (player.isPlaying()) {
-                                player.pause();
-                            } else {
-                                player.start();
-                            }
-                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                            player.setDataSource(musicSource);
-                            player.prepare();
-                            player.start();
-
-                        } catch (Exception e) {
-                            // TODO: handle exception
-                        }
-                        break;
+//                    case 0:
+//
+//                        try {
+//
+//                            if (musicSource != artist1.getAudioURL()) {
+//                                player.stop();
+//                                musicSource = artist1.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        break;
+//                    case 1:
+//                        try {
+//
+//                            if (musicSource != artist2.getAudioURL()) {
+//                                player.stop();
+//                                musicSource = artist2.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        listview.getChildAt(position).setPadding(1, 1, 1, 1);
+//                        break;
+//                    case 2:
+//                        try {
+//
+//                            if (musicSource != artist3.getAudioURL()) {
+//                                player.stop();
+//                                musicSource = artist3.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        break;
+//                    case 3:
+//                        try {
+//
+//                            if (musicSource != artist4.getAudioURL()) {
+//                                player.stop();
+//                                musicSource = artist4.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        break;
+//                    case 4:
+//                        try {
+//
+//                            if (musicSource != artist5.getAudioURL()) {
+//                                player.stop();
+//                                musicSource = artist5.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        break;
+//                    case 5:
+//                        try {
+//
+//                            if (musicSource != artist6.getAudioURL()) {
+//                                player.stop();
+//                                musicSource = artist6.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        break;
+//                    case 6:
+//                        try {
+//
+//                            if (musicSource != artist7.getAudioURL()){
+//                                player.stop();
+//                                musicSource = artist7.getAudioURL();
+//                            }
+//
+//                            if (player.isPlaying()) {
+//                                player.pause();
+//                            } else {
+//                                player.start();
+//                            }
+//                            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                            player.setDataSource(musicSource);
+//                            player.prepare();
+//                            player.start();
+//
+//                        } catch (Exception e) {
+//                            // TODO: handle exception
+//                        }
+//                        break;
+//
                 }
 
 
