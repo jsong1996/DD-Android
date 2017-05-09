@@ -28,29 +28,29 @@ public class Tab4Activity extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_contacts, container, false);
 
-        final Button LyftButton = (Button) view.findViewById(R.id.lyft_button);
+//        final Button LyftButton = (Button) view.findViewById(R.id.lyft_button);
         final Button nupdButton = (Button) view.findViewById(R.id.nupd_button);
         final Button emergencyButton = (Button) view.findViewById(R.id.emergency_button);
         final Button mayfestButton = (Button) view.findViewById(R.id.mayfest_button);
         final Button shuttleButton = (Button) view.findViewById(R.id.shuttle_button);
         final Button sponsorsButton = (Button) view.findViewById(R.id.sponsors_button);
 
-        LyftButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View V) {
-                Intent launchIntent = getContext().getPackageManager().getLaunchIntentForPackage("me.lyft.android");
-                if (launchIntent != null) {
-                    startActivity(launchIntent);
-                }
-                else {
-                    Context context = getContext();
-                    CharSequence text = "Please download Lyft first!";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-            }
-        });
+//        LyftButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View V) {
+//                Intent launchIntent = getContext().getPackageManager().getLaunchIntentForPackage("me.lyft.android");
+//                if (launchIntent != null) {
+//                    startActivity(launchIntent);
+//                }
+//                else {
+//                    Context context = getContext();
+//                    CharSequence text = "Please download Lyft first!";
+//                    int duration = Toast.LENGTH_SHORT;
+//
+//                    Toast toast = Toast.makeText(context, text, duration);
+//                    toast.show();
+//                }
+//            }
+//        });
         nupdButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V) {
                 String nupd_number = "8474913456";

@@ -3,6 +3,8 @@ package com.dilloday.jimmy.dilloday.Adapters;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,11 @@ import com.dilloday.jimmy.dilloday.Adapters.ArtistAdapter;
 import com.dilloday.jimmy.dilloday.Classes.Artist;
 import com.dilloday.jimmy.dilloday.HomeTab.Tab1Activity;
 import com.dilloday.jimmy.dilloday.R;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
@@ -33,6 +40,9 @@ public class ArtistAdapter extends BaseAdapter {
     LayoutInflater inflater;
     MediaPlayer player = new MediaPlayer();
     String musicSource = new String();
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference();
+    Uri imgSource;
 
     public ArtistAdapter(Context context, List<Artist> listArtists) {
         this.listArtists = listArtists;
@@ -69,7 +79,6 @@ public class ArtistAdapter extends BaseAdapter {
                     .findViewById(R.id.txt_time);
             holder.backgroundImg = (RelativeLayout) convertView
                     .findViewById(R.id.background_img);
-            holder.playbar = (ImageView) convertView.findViewById(R.id.play_bar);
 
 
             convertView.setTag(holder);
@@ -131,15 +140,11 @@ public class ArtistAdapter extends BaseAdapter {
             }
         });
 
-
-
-
         Picasso.with(context) //Context
                 .load(artist.getImgURL()) //URL/FILE
                 .into(imgHolder);//an ImageView Object to show the loaded image;
 
         //holder.backgroundImg.setBackground(artist.getDrawableImg());
-
 
 
 

@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="20dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ride with Lyft"
-                android:id="@+id/lyft_button"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/lyft_button"
-                android:height="62dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft = "10dp"
-                android:layout_marginRight = "10dp"
-                android:layout_marginTop = "9dp"
-                />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Ride with Lyft"-->
+                <!--android:id="@+id/lyft_button"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:background="@drawable/lyft_button"-->
+                <!--android:height="62dp"-->
+                <!--android:layout_marginBottom="4dp"-->
+                <!--android:layout_marginLeft = "10dp"-->
+                <!--android:layout_marginRight = "10dp"-->
+                <!--android:layout_marginTop = "9dp"-->
+                <!--/>-->
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:text="Call NUPD (NON-EMERGENCY)"
                 android:id="@+id/nupd_button"
                 android:layout_alignParentLeft="true"
@@ -40,7 +37,6 @@
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/button"
                 android:background="@drawable/nupd_button"
-                android:height="62dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginLeft = "10dp"
                 android:layout_marginRight = "10dp"
@@ -48,7 +44,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:text="Call 911 (Emergency)"
                 android:id="@+id/emergency_button"
                 android:layout_below="@+id/button2"
@@ -57,7 +54,6 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:background="@drawable/emergency_button"
-                android:height="62dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginLeft = "10dp"
                 android:layout_marginRight = "10dp"
@@ -65,7 +61,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:text="Contact Mayfest"
                 android:id="@+id/mayfest_button"
                 android:layout_below="@+id/button3"
@@ -74,7 +71,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/contact_mayfest_button"
-                android:height="62dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginLeft = "10dp"
                 android:layout_marginRight = "10dp"
@@ -82,7 +78,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:text="Shuttle Schedule"
                 android:id="@+id/shuttle_button"
                 android:layout_below="@+id/button4"
@@ -91,7 +88,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/shuttle_button"
-                android:height="62dp"
                 android:layout_marginBottom="4dp"
                 android:layout_marginLeft = "10dp"
                 android:layout_marginRight = "10dp"
@@ -99,7 +95,8 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:text="Sponsors"
                 android:id="@+id/sponsors_button"
                 android:background="@drawable/sponsors_button"
@@ -108,13 +105,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:height="62dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft = "10dp"
                 android:layout_marginRight = "10dp"
                 android:layout_marginTop = "5dp"/>
         </LinearLayout>
-    </ScrollView>
-
 
 </LinearLayout>

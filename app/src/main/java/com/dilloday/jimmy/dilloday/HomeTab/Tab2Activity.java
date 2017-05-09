@@ -15,8 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.dilloday.jimmy.dilloday.Main.MainActivity;
 import com.dilloday.jimmy.dilloday.R;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -36,19 +38,15 @@ public class Tab2Activity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.fragment_map, container, false);
-        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference storageRef = storage.getReference();
 
-//        StorageReference storageRef = storage.getReferenceFromUrl("gs://dillo-day-androi-1483670185603.appspot.com/images/lakefill_map_2016.png");
-//
-//        StorageReference spaceRef = storageRef.child("images/lakefill_map_2016.png");
-//
-//        Uri url = spaceRef.getDownloadUrl().getResult();
-//
         ImageView map = (ImageView) view.findViewById(R.id.map);
         Drawable drawable = getResources().getDrawable(R.drawable.lakefill_map_2016);
         map.setBackground(drawable);
-//        Picasso.with(getContext())
-//                .load(url)
+//        Glide.with(this /* context */)
+//                .using(new FirebaseImageLoader())
+//                .load(storageRef)
 //                .into(map);
 
 
