@@ -30,7 +30,5 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Tab3Activity.alert.add(0, remoteMessage.getNotification().getBody());
 
 
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
-        Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
     }
 }

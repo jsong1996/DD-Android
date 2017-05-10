@@ -45,7 +45,6 @@ public class Tab4Activity extends Fragment {
                 emailIntent.putExtra(Intent.EXTRA_TEXT   , "Message Body");
                 try {
                     startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-                    Log.i("Email Sent", "");
                 }catch (android.content.ActivityNotFoundException ex){
                     Toast.makeText(getContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
                 }
