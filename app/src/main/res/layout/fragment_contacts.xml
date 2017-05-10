@@ -8,22 +8,23 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical">
-            <!--<Button-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Ride with Lyft"-->
-                <!--android:id="@+id/lyft_button"-->
-                <!--android:layout_alignParentLeft="true"-->
-                <!--android:layout_alignParentStart="true"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_alignParentEnd="true"-->
-                <!--android:background="@drawable/lyft_button"-->
-                <!--android:height="62dp"-->
-                <!--android:layout_marginBottom="4dp"-->
-                <!--android:layout_marginLeft = "10dp"-->
-                <!--android:layout_marginRight = "10dp"-->
-                <!--android:layout_marginTop = "9dp"-->
-                <!--/>-->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Report a Bug to App Developer"
+                android:id="@+id/bug_button"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/lyft_button"
+                android:height="62dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft = "10dp"
+                android:layout_marginRight = "10dp"
+                android:layout_marginTop = "9dp"
+                />
 
             <Button
                 android:layout_width="match_parent"

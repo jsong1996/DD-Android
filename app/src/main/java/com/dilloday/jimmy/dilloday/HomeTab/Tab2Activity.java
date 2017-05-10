@@ -38,19 +38,10 @@ public class Tab2Activity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.fragment_map, container, false);
-//        FirebaseStorage storage = FirebaseStorage.getInstance();
-//        StorageReference storageReference = storage.getReference().child("/image/lakefill_map_2016.png");
-//
-//        System.out.println(storageReference);
 
         ImageView map = (ImageView) view.findViewById(R.id.map);
-        Drawable drawable = getResources().getDrawable(R.drawable.lakefill_map_2016);
+        Drawable drawable = getResources().getDrawable(R.drawable.lakefill_map);
         map.setBackground(drawable);
-//        Glide.with(this /* context */)
-//                .using(new FirebaseImageLoader())
-//                .load(storageRef)
-//                .into(map);
-
 
         return view;
 
